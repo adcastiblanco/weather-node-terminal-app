@@ -75,16 +75,16 @@ export const readInput = async (message) => {
   return desc;
 };
 
-export const createTasksSelectList = async (tasks) => {
-  const choices = tasks.map((task, index) => ({
-    value: task.id,
-    name: `${(index + 1 + ".").green} ${task.desc}`,
+export const listPlaces = async (places = []) => {
+  const choices = places.map((place, index) => ({
+    value: place.id,
+    name: `${(index + 1 + ".").green} ${place.name}`,
   }));
 
   const questions = {
     name: "id",
     type: "list",
-    message: "Borrar",
+    message: "Seleccione lugar: ",
     choices,
   };
 
